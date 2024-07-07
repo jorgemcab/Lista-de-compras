@@ -9,15 +9,14 @@
     list-style: none;
 }
 body{
-    background-image: url(/assets/background.jpg);
-    background-repeat: round;
+    background-image: url(/assets/Supermercados-background.jpg);
     background-position: center;
 }
-.nav-productos{
+.nav-productos form{
     height: 15vh;
     padding: 2rem 2rem;
     border-radius: 10px;
-    margin: 1vh 2vh;
+    margin: 3vh 2vh;
     background: var(--prueba);
     display: flex;
     justify-content: center;
@@ -49,6 +48,18 @@ body{
 
 .nav-input::placeholder{
     padding: 5px 3px;
+}
+.btn-agregar-item{
+    padding: 5px 5px;
+    border-radius: 5px;
+    box-shadow: 1px 1px 1px ;
+    border: none;
+
+}
+.btn-agregar-item:hover{
+    background-color: rgb(171, 209, 209);
+    box-shadow: 0.3px 0.3px;
+
 }
 .hero{
     height: 70vh;
