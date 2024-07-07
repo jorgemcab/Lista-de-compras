@@ -72,3 +72,49 @@ body{
         transform: translateY(0)
     }
 }
+
+/* JS CODE */
+.contenedor-items{
+    margin: 1vh 2vh;
+}
+.btn-borrar-todo{
+    margin: 1vh 2vh;
+}
+
+.viñeta-item{
+    height: 50px;
+    width: 50px;
+    background: orange;
+    border-radius: 50%;
+    animation:  viñeta-translate 0.5s ease-in;
+}
+.viñeta-item-alimentos{
+    height: 50px;
+    width: 50px;
+    background: orange;
+    border-radius: 50%;
+    animation:  viñeta-translate 0.5s ease-in;
+}
+.viñeta-item-limpieza{
+    height: 50px;
+    width: 50px;
+    background: orange;
+    border-radius: 50%;
+    animation:  viñeta-translate 0.5s ease-in;
+}
+.viñeta-item-higiene{
+    height: 50px;
+    width: 50px;
+    background: orange;
+    border-radius: 50%;
+    animation:  viñeta-translate 0.5s ease-in;
+}
+
+@keyframes viñeta-translate{
+    from{
+        transform: translateX(-100px)
+    }
+    to{
+        transform: translateX(0px)
+    }
+}
