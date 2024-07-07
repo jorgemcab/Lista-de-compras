@@ -8,3 +8,67 @@
     text-decoration: none;
     list-style: none;
 }
+body{
+    background-image: url(/assets/background.jpg);
+    background-repeat: round;
+    background-position: center;
+}
+.nav-productos{
+    height: 15vh;
+    padding: 2rem 2rem;
+    border-radius: 10px;
+    margin: 1vh 2vh;
+    background: var(--prueba);
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    animation: nav-translate 0.7s ease-out;
+}
+@keyframes nav-translate{
+    from{
+        transform: translateY(-200px)
+    }
+    to{
+        transform: translateY(0)
+    }
+}
+.nav-input{
+    width: 30%;
+    border-radius: 10px;
+    padding: 5px 3px;
+    animation: aparecer 1s ease 0.2s;
+}
+@keyframes aparecer {
+    20%{
+        transform:scale(0,0)
+    }
+    100%{
+        transform: scale(1,1);
+    }
+}
+
+.nav-input::placeholder{
+    padding: 5px 3px;
+}
+.hero{
+    height: 70vh;
+}
+.monto-suma{
+    height: 5vh;
+    padding: 1rem 2rem;
+    border-radius: 10px;
+    margin: 1vh 2vh;
+    background: var(--prueba);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    animation: content-suma-translate 0.7s ease-out;
+}
+@keyframes content-suma-translate{
+    from{
+        transform: translateY(200px)
+    }
+    to{
+        transform: translateY(0)
+    }
+}
