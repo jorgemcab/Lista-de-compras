@@ -9,7 +9,7 @@
     list-style: none;
 }
 body{
-    background-image: url(/assets/Supermercados-background.jpg);
+    background-image: url(/assets/background.jpg);
     background-position: center;
 }
 .nav-productos form{
@@ -85,11 +85,23 @@ body{
 }
 
 /* JS CODE */
+.hidden{
+    visibility: hidden;
+}
 .contenedor-items{
     margin: 1vh 2vh;
 }
 .btn-borrar-todo{
-    margin: 1vh 2vh;
+    padding: 5px 5px;
+    border-radius: 5px;
+    box-shadow: 1px 1px 1px ;
+    border: none;
+
+}
+.btn-borrar-todo:hover{
+    background-color: rgb(171, 209, 209);
+    box-shadow: 0.3px 0.3px;
+
 }
 
 .viñeta-item{

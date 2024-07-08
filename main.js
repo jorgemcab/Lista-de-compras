@@ -1,33 +1,43 @@
 const listaDeItems = document.querySelector(".hero-ul");
 const btnAgregarItem = document.querySelector(".btn-agregar-item");
 const navForm = document.querySelector(".nav-fomr-productos");
+const btnBorrarItem = document.querySelector('.borrar-item')
 //// DATOS INPUT///
 const productoInput = document.querySelector(".producto-input");
-const precioInput = document.querySelector(".importe-input")
+const precioInput = document.querySelector(".importe-input");
+const btnBorrarTodo = document.querySelector(".btn-borrar-todo")
 
-let arrayItems = [productoInput];
+let arrayItems = JSON.parse(localStorage.getItem("lista")) || [];
 
-// listaDeItems.innerHTML = `
-//     <div class= "contenedor-items">
-//         <div class= "viñeta-item"></div>
-//         <li class= "items-productos"></li>
-//         <i class="fa-solid fa-xmark borrar-item"></i>
-//     </div>
-//     <button class="btn-borrar-todo">Borrar Todo</button>
-//     `
+const saveLocalStorage = () => {
+    localStorage.setItem("lista", JSON.stringify(arrayItems))
+}
 
 const render = () => {
     listaDeItems.innerHTML = arrayItems.map((indice) => {
         return `
         <div class= "contenedor-items">
             <div class= "viñeta-item"></div>
-            <li class= "items-productos intems-li">${indice.productoInput}</li>
-            <li class= "items-precio intems-li">${indice.precioInput}</li>
-            <i class="fa-solid fa-xmark borrar-item" id="${indice.id}"></i>
+            <li class= "items-productos intems-li">${indice.Producto}</li>
+            <li class= "items-precio intems-li">${indice.Monto}</li>
+            <i class="fa-solid fa-xmark borrar-item" data-id ="${indice.id}"></i>
         </div>
-        <button class="btn-borrar-todo">Borrar Todo</button>
-        `
-    })
+        `});
+};
+
+const btnToggle = () => {
+    if(arrayItems.length <= 1){
+         btnBorrarTodo.classList.add("hidden")
+    } else {
+        btnBorrarTodo.classList.remove("hidden")
+    }
+};
+
+const upDateUi = () => {
+    render();
+    btnToggle();
+    navForm.reset();
+    saveLocalStorage();
 }
 
 const agregarItem = (e) => {
@@ -40,13 +50,13 @@ const agregarItem = (e) => {
                 Producto: productoInput.value,
                 Monto: precioInput.value,
                 id: Date.now()
-            }
-        ]
-    }
+            }];};
+    upDateUi()
 }
- 
+
 const init = () => {
     document.addEventListener("DOMContentLoaded", render);
+    document.addEventListener("DOMContentLoaded", btnToggle);
     navForm.addEventListener("submit", agregarItem)
 }
 
